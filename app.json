@@ -1,0 +1,60 @@
+{
+  "expo": {
+    "name": "flurry",
+    "slug": "flurry",
+    "scheme": "flurry",
+    "version": "0.0.1",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "app.flurry.social"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "app.flurry.social"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "14.0",
+            "newArchEnabled": false
+          },
+          "android": {
+            "newArchEnabled": false,
+              "compileSdkVersion": 33,
+              "targetSdkVersion": 33,
+              "minSdkVersion": 23,
+              "buildToolsVersion": "33.0.0"
+          }
+        }
+      ],
+			[
+				"expo-image-picker",
+				{
+					"ios": {
+						"photosPermission": "Allow $(PRODUCT_NAME) to access your photos to add to posts.",
+						"cameraPermission": "Allow $(PRODUCT_NAME) to access your camera to take photos to add to posts."
+					}
+				}
+			]
+    ]
+  }
+}
