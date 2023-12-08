@@ -171,6 +171,7 @@ export const useNewPostScreen = (): UseNewPostScreen => {
         text: richText.text,
         facets: richText.facets,
         tags: undefined,
+        langs: ['en'], // TODO offer options. get from settings?
         reply:
           replyTo != null
             ? {
