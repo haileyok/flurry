@@ -61,8 +61,12 @@ export const feedQueryFunction = async ({
     res.feed.map((p) => transformer.transformTimelinePost(p)),
   );
 
-  // Apply other filters if necessary
+  // Remove posts with blocked parents
+  // I'm not sure if we need to check if the post itself is blocked, but we will anyway (custom feeds?)
+  newPosts = newPosts.filter((p) => !p.isBlocked && !p.parent?.isBlocked);
 
+  // Apply other filters if necessary
+  // A query key length of one means we are on the home feed. Other feeds should not be filtered.
   if (queryKey.length === 1) {
     newPosts = transformer.applyFeedFilters(newPosts);
   }
