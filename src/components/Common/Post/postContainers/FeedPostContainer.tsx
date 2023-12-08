@@ -18,7 +18,7 @@ function FeedPostContainer({ post }: IProps): React.JSX.Element | null {
   return (
     <YStack borderBottomWidth={1} borderBottomColor="$border">
       {post.hasParent && !post.isRepost && (
-        <FeedPost post={post.parent!} drawBottomLine />
+        <FeedPost post={post.parent!} drawBottomLine showEmbeddedPosts />
       )}
       <FeedPost
         post={post}
